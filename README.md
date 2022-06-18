@@ -1,2 +1,2 @@
 # laraveldocker
-//First setup off PHP LARAVEL dockEr project
+//Completly setup Laravel project with Docker
