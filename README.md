@@ -1,2 +1,2 @@
 # laraveldocker
-//Completly setuped Laravel project with Docker
+//Completl:)y setuped Laravel project with Docker
