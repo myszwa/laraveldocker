@@ -11,11 +11,16 @@ Licencja MIT – jedna z najprostszych i najbardziej liberalnych licencji otwart
 
 # Przygotowanie środowiska DevOps
   
-Aby uruchomić aplikację Laravel w kontenerze definujemy następujące serwisy w pliku docker-compose.yml
+Aby uruchomić aplikację Laravel za pomocą Dockera definujemy następujące serwisy w pliku docker-compose.yml
 
 ![image](https://user-images.githubusercontent.com/58239029/176698062-f25f8033-f54b-4f4f-8ed2-bd3cbf69fe4b.png)
 
 nginx – serwer WWW oraz serwer proxy dla HTTP i IMAP/POP3 stworzony przez Igora Sysojewa a rozwijany i wspierany przez założoną przez niego firmę, Nginx, Inc. Zaprojektowany z myślą o wysokiej dostępności i silnie obciążonych serwisach. Wydawany jest na licencji BSD.
+
+Aby nginx został poprawnie uruchomiony tworzymy plik konfiguracyjny serwera
+
+![image](https://user-images.githubusercontent.com/58239029/176699764-660819ec-6418-421d-baed-ad6274874c2c.png)
+
 
 ![image](https://user-images.githubusercontent.com/58239029/176698169-fc48cb25-925d-4861-a0c7-096af9e3031c.png)
 
@@ -24,3 +29,9 @@ MySQL – wolnodostępny, otwartoźródłowy system zarządzania relacyjnymi baz
 ![image](https://user-images.githubusercontent.com/58239029/176698244-57af1795-97f3-4f9e-ac4a-e5b49eea20ed.png)
 
 PHP – interpretowany, skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym.
+
+# Uruchomenie aplikacji
+
+Kontenery uruchamiamy za pomocą polecnia : docker-compose build && docker-compose up -d
+![image](https://user-images.githubusercontent.com/58239029/176700613-262399ee-4498-4d01-9a14-20a529012467.png)
+
