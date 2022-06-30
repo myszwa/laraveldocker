@@ -72,6 +72,10 @@ Uruchomienie rurociągu
 
 ![image](https://user-images.githubusercontent.com/58239029/176707038-3ab88646-1f26-4abc-bd11-1153b76729aa.png)
 
+Wizualizacja historii budowania rurociągu
+
+![image](https://user-images.githubusercontent.com/58239029/176708415-c27c2016-495e-4797-abb2-dc5e036678d3.png)
+
 
 
 
