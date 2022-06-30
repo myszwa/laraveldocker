@@ -7,15 +7,14 @@ pipeline {
         stage("build") {
         
             steps {
-     sh "composer install"
-            sh "cp .env.example .env"
-            sh "php artisan key:generate"
+        echo 'Building...'
             }
         }
        stage("test") {
             
            steps {
-          echo 'Testing...'
+            // Run any testing suites
+            sh "./vendor/bin/phpunit"
       }
            }
         stage('deploy') {
