@@ -13,8 +13,8 @@ pipeline {
        stage("test") {
             
            steps {
-            // Run any testing suites
-            sh "./vendor/bin/phpunit"
+           echo 'Testing...'
+            }
       }
            }
         stage('deploy') {
