@@ -7,7 +7,9 @@ pipeline {
         stage("build") {
         
             steps {
-     echo 'Bulding...'
+     sh "composer install"
+            sh "cp .env.example .env"
+            sh "php artisan key:generate"
             }
         }
        stage("test") {
