@@ -45,4 +45,34 @@ Lub z poziomu wiersza poleceń:
 ![Zrzut ekranu 2022-06-29 144249](https://user-images.githubusercontent.com/58239029/176701773-70ee8f24-fbf6-4e7f-9123-cd1bc7671fa0.png)
 
 
+# Integracja projektu z Jenkins
+
+Jenkins - serwer typu open source służący do automatyzacji związanej z tworzeniem oprogramowania. W szczególności ułatwia budowanie, testowanie i wdrażanie aplikacji. Czyli umożliwia rozwój oprogramowania w trybie ciągłej integracji i ciągłego dostarczania.
+
+
+# Zestawienie nowej instancji Jenkinsa za pomocą środowiska Docker
+
+Jenkinsa uruchamiamy w kontenerze za pomocą polecenia: 
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+Komunikacja z Jenkinsem poza kontenerem
+
+![image](https://user-images.githubusercontent.com/58239029/176704276-3452cec3-4574-4cfa-8938-7b7a2a30996b.png)
+
+# Deklaracja rurociągu
+
+Stworzenie obiektu pipeline, przeprowadzającego następujące kroki: 
+- Build
+- Test
+- Deploy
+
+![image](https://user-images.githubusercontent.com/58239029/176706071-4686d1a6-2842-4b4b-acc4-a6514bc25568.png)
+
+Uruchomienie rurociągu 
+
+![image](https://user-images.githubusercontent.com/58239029/176707038-3ab88646-1f26-4abc-bd11-1153b76729aa.png)
+
+
+
+
 
