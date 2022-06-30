@@ -35,3 +35,14 @@ PHP – interpretowany, skryptowy język programowania zaprojektowany do generow
 Kontenery uruchamiamy za pomocą polecnia : docker-compose build && docker-compose up -d
 ![image](https://user-images.githubusercontent.com/58239029/176700613-262399ee-4498-4d01-9a14-20a529012467.png)
 
+# Komunikacja z aplikacją
+
+Z aplikacją możemy komunikować się za pomocą portu w przęglądarce internetowej: 
+![image](https://user-images.githubusercontent.com/58239029/176701461-2c4e8482-d788-4b72-9c4d-4012860f3f77.png)
+
+Lub z poziomu wiersza poleceń:
+
+![Zrzut ekranu 2022-06-29 144249](https://user-images.githubusercontent.com/58239029/176701773-70ee8f24-fbf6-4e7f-9123-cd1bc7671fa0.png)
+
+
+
