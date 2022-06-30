@@ -76,7 +76,9 @@ Wizualizacja historii budowania rurociągu
 
 ![image](https://user-images.githubusercontent.com/58239029/176708415-c27c2016-495e-4797-abb2-dc5e036678d3.png)
 
+# Publish
 
+Aplikacja musi znajdywać się na serwerze, ponieważ komunikacja z nią odbywa się za pomocą protokołu HTTP.
 
 
 
