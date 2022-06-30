@@ -1,19 +1,13 @@
 pipeline {
     
-    agent {
-        dockerfile true
-    }
+    agent any
   
     stages {
     
         stage("build") {
         
             steps {
-          sh 'php --version'
-                sh 'composer install --ignore-platform-reqs'
-                sh 'composer --version'
-                sh 'cp .env.example .env'
-                sh 'php artisan key:generate'
+     echo 'Bulding...'
             }
         }
        stage("test") {
