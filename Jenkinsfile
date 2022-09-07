@@ -7,6 +7,7 @@ pipeline {
         stage("build") {
         
             steps {
+              sh 'cp .env.example .env'
               sh 'composer install'
               sh 'php artisan key:generate'
             }
