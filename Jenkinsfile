@@ -13,6 +13,7 @@ pipeline {
        stage("test") {
             
            steps {
+            sh 'php artisan key:generate'
             sh 'php artisan test'
             }
         }
