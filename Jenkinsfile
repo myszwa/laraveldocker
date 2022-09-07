@@ -9,7 +9,7 @@ pipeline {
             steps {
               sh 'cp .env.example .env'
               sh 'composer install'
-              // sh 'npm install'
+              sh 'npm install'
               sh 'php artisan key:generate'
             }
         }
