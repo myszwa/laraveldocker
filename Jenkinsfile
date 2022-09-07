@@ -8,12 +8,12 @@ pipeline {
         
             steps {
               sh 'composer install'
+              sh 'php artisan key:generate'
             }
         }
        stage("test") {
             
            steps {
-            sh 'php artisan key:generate'
             sh 'php artisan test'
             }
         }
