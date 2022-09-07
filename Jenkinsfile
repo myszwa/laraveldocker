@@ -13,7 +13,7 @@ pipeline {
        stage("test") {
             
            steps {
-            sh 'php artisan serve'
+            sh 'php artisan test'
             }
         }
         stage('deploy') {
