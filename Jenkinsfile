@@ -13,16 +13,22 @@ pipeline {
               sh 'php artisan key:generate'
             }
         }
-       stage("test") {
+        stage("test") {
             
            steps {
             sh './vendor/bin/phpunit'
             }
         }
         stage('deploy') {
-      steps {
-          echo 'Deploying...'
-      }  
+            steps {
+            sh 'ssh -o StrictHosyKeyChecking = no forum-deploy@192.168.56.101 "cd forum; \
+                git pull origin master; \
+                composer install --optimize-autoloader --no-dev; \
+                php artisan migrate --force; \
+                php artisan cache:clear; \
+                php artisan config:cache 
+                "'
+            }  
     }
            
   }
