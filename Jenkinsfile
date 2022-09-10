@@ -21,7 +21,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-            sh 'ssh -o StrictHosyKeyChecking = no forum-deploy@192.168.56.101 "cd forum; \
+            sh 'ssh -o StrictHosyKeyChecking=no forum-deploy@192.168.56.101 "cd forum; \
                 git pull origin master; \
                 composer install --optimize-autoloader --no-dev; \
                 php artisan migrate --force; \
