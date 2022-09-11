@@ -21,7 +21,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-            sh 'ssh root@192.168.179.129 "cd forum; \
+            sh 'ssh -oStrictHostKeyChecking=no root@192.168.179.129 "cd forum; \
                 git pull origin master; \
                 composer install --optimize-autoloader --no-dev; \
                 php artisan migrate --force; \
