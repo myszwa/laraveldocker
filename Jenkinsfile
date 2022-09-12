@@ -29,9 +29,7 @@ pipeline {
             //     composer install --optimize-autoloader --no-dev; \
             //     php artisan migrate --force; \
             //     php artisan cache:clear; \"'
-            sh 'pwd'
-            sh 'ls -a'
-            sh 'mkdir forum'
+
             sh 'cd forum'
             sh 'git pull origin master'
             sh 'composer install --optimize-autoloader --no-dev'
