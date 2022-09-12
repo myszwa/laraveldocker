@@ -29,7 +29,7 @@ pipeline {
             //     composer install --optimize-autoloader --no-dev; \
             //     php artisan migrate --force; \
             //     php artisan cache:clear; \"'
-            sh ''
+            sh 'pwd'
             }  
     }
            
