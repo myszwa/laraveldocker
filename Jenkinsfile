@@ -33,8 +33,8 @@ pipeline {
             sh 'cd forum'
             sh 'git pull origin master'
             sh 'composer install --optimize-autoloader --no-dev'
-            sh 'php artisan migrate --force'
             sh 'php artisan cache:clear'
+            sh 'php artisan config:cache'
             }  
     }
            
