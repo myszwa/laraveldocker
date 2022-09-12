@@ -21,11 +21,11 @@ pipeline {
         }
         stage('deploy') {
             steps {
-              sshagent(['app-server-root-keys']) {
+              // sshagent(['app-server-root-keys']) {
               // sh 'ssh -o StrictHostKeyChecking=no -l root 192.168.179.129 uname -a'
-                         sh 'ssh -o StrictHostKeyChecking=no root@192.168.179.129 '
-              }
-            sh 'cd forum; \
+              //            sh ''
+              // }
+            sh 'ssh -o StrictHostKeyChecking=no root@192.168.179.129 "cd forum; \
                 git pull origin master; \
                 composer install --optimize-autoloader --no-dev; \
                 php artisan migrate --force; \
