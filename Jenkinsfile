@@ -34,6 +34,9 @@ pipeline {
             sh 'mkdir forum'
             sh 'cd forum'
             sh 'git pull origin master'
+            sh 'composer install --optimize-autoloader --no-dev'
+            sh 'php artisan migrate --force'
+            sh 'php artisan cache:clear'
             }  
     }
            
