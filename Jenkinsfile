@@ -30,6 +30,7 @@ pipeline {
             //     php artisan migrate --force; \
             //     php artisan cache:clear; \"'
             sh 'pwd'
+            sh 'ls -a'
             }  
     }
            
