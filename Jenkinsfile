@@ -31,6 +31,7 @@ pipeline {
             //     php artisan cache:clear; \"'
             sh 'pwd'
             sh 'ls -a'
+            sh 'mkdir forum'
             sh 'cd forum'
             sh 'git pull origin master'
             }  
