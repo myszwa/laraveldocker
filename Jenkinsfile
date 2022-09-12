@@ -28,8 +28,7 @@ pipeline {
                 git pull origin master; \
                 composer install --optimize-autoloader --no-dev; \
                 php artisan migrate --force; \
-                php artisan cache:clear; \
-                php artisan config:cache "'
+                php artisan cache:clear; \"'
             }  
     }
            
