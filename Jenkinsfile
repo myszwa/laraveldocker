@@ -24,13 +24,14 @@ pipeline {
             steps {
               sshagent(['app-server-root-keys']) {
               sh 'ssh -o StrictHostKeyChecking=no root@192.168.179.129'
-              }
-            sh 'pwd'  
-            sh 'cd forum'
-            sh 'git pull origin master'
-            sh 'composer install --optimize-autoloader --no-dev'
-            sh 'php artisan cache:clear'
-            sh 'php artisan config:cache'
+              }  
+                sh 'pwd'
+                sh 'ls -a'
+                sh 'cd forum'
+                sh 'git pull origin master'
+                sh 'composer install --optimize-autoloader --no-dev'
+                sh 'php artisan cache:clear'
+                sh 'php artisan config:cache'
             }  
     }
            
