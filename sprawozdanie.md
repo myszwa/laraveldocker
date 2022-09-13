@@ -186,21 +186,19 @@ Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z 
 
 ![image](https://user-images.githubusercontent.com/58239029/189949656-f5b720bc-6aea-43b3-8f3c-b0da52d35946.png)
 
-Stawiamy sobie maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
+Stawiamy maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
 
-Tworzenie kluczy ssh zostało świetnie wyjaśnione na filmie 
+Tworzymy klucze SSH na naszej maszynie wirtualnej. Klucz prywatny będziemy wklejać do Jenkinsa
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
 
-Na maszynie wirtualnej tworzymy parę kluczy SSH,a następnie ustawiamy klucz w naszym Jenkinsie:
-
 Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
 
-![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189947081-136d5a3e-f55d-4722-accc-7811c853b2af.png)
+![image](https://user-images.githubusercontent.com/58239029/189951370-cffd1866-6605-4594-bdd9-49d07eaea7c3.png)
 
-Dodajemy Credyntiala z kluczem prywatnym SSH
+Dodajemy Credyntiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy
 
-![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189944980-11afc83c-175f-4ba1-8bb4-a7f58460fbaa.png)
+![image](https://user-images.githubusercontent.com/58239029/189951565-1e1e1e8b-ef62-4e03-8c38-ae9f9c874169.png)
 
 
 
