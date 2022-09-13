@@ -143,7 +143,8 @@ Stworzenie obiektu pipeline, przeprowadzającego następujące kroki:
 # Build
 W tym kroku budujemy naszą aplikację
 
-![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189939081-181f1c38-8845-4a26-a867-111aff433d98.png)
+![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189947454-13573357-41e6-4f8a-bc73-21bf74a60b6d.png)
+
 
 Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym
 
