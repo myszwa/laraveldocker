@@ -178,7 +178,7 @@ Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotk
 
 ![image](https://user-images.githubusercontent.com/58239029/189942857-4dda7f9c-ec13-41c9-88c8-21f47e5322a0.png)
 
-Info na temat problemu:
+Potwierdzenie, że nie jest to problem występujący lokalnie na moim komputerze
 
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943911-9ac3add2-989e-4b47-8a22-99ce38eee1f7.png)
 
@@ -188,9 +188,11 @@ Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z 
 
 Stawiamy maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
 
-Tworzymy klucze SSH na naszej maszynie wirtualnej. Klucz prywatny będziemy wklejać do Jenkinsa
+Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedstawione w poniższym filmie
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
+
+Klucz prywatny będziemy wklejać do Jenkinsa
 
 Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
 
@@ -199,6 +201,27 @@ Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z klucz
 Dodajemy Credyntiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy
 
 ![image](https://user-images.githubusercontent.com/58239029/189951565-1e1e1e8b-ef62-4e03-8c38-ae9f9c874169.png)
+
+Po wykonaniu tych czynności jesteśmy w stanie połączyć się z naszym serwerem deklarując następujące instrukcje
+
+![image](https://user-images.githubusercontent.com/58239029/189954907-9d441425-e457-4b63-80cd-b5bb384af7d0.png)
+
+Log z Jenkinsa potwierdzający udane połączenie
+
+![image](https://user-images.githubusercontent.com/58239029/189955236-e6cbd101-d8ad-4e81-b1f0-c6b663454258.png)
+
+Po udanym połączeniu z serwerem wykonujemy następujące instrukcje
+
+![image](https://user-images.githubusercontent.com/58239029/189955600-32e6755b-d331-4008-ae18-7f826cd51fae.png)
+
+Wykonanie tych poleceń jest zoobrazowane w logach naszego pipelinu
+
+Oto ostateczny wykaz jak zachowywał się nasz pipeline, aż do osiągnięcia pełnego sukcesu
+![image](https://user-images.githubusercontent.com/58239029/189956490-496eb1ad-316a-4725-a2be-9b677158e43d.png)
+
+
+
+
 
 
 
