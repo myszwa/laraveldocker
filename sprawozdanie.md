@@ -127,9 +127,7 @@ Oraz gdzie znajduję się nasz Jenkinsfile zaznaczając opcje Lightweight checko
 
 Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklarowanych w naszym rurociągu
 
-![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189938690-e4ba6660-0919-4f05-be45-46997bda73bf.png)
-
-
+![image](https://user-images.githubusercontent.com/58239029/189947860-36ee798b-0057-437a-899e-ac92fbb6849e.png)
 
 
 # Deklaracja rurociągu
@@ -139,11 +137,12 @@ Stworzenie obiektu pipeline, przeprowadzającego następujące kroki:
 - Test
 - Deploy
 
-
 # Build
+
 W tym kroku budujemy naszą aplikację
 
-![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189947454-13573357-41e6-4f8a-bc73-21bf74a60b6d.png)
+![image](https://user-images.githubusercontent.com/58239029/189947951-ee20573d-1ec3-480a-aa58-f7d8ee041855.png)
+
 
 
 Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym
