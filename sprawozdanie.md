@@ -118,8 +118,11 @@ Następnie definujemy, że nasz build będzie uruchamiał się ze skryptu znajdu
 ![image](https://user-images.githubusercontent.com/58239029/189937594-e9968fb6-1a37-45d7-a278-1bc9a73963ba.png)
 
 Podajemy link do naszego repo 
+
 ![image](https://user-images.githubusercontent.com/58239029/189937730-4c6c1fb1-f1ee-40cb-8e4b-1c350d703b85.png)
+
 Oraz gdzie znajduję się nasz Jenkinsfile zaznaczając opcje Lightweight checkout
+
 ![image](https://user-images.githubusercontent.com/58239029/189937946-4497e2c5-960b-483a-9af1-138e788f30a8.png)
 
 Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklarowanych w naszym rurociągu
@@ -147,6 +150,7 @@ Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które s
 ![Zrzut ekranu 2022-09-06 215258](https://user-images.githubusercontent.com/58239029/189939765-1dde964a-f6b7-43a0-8906-04aa201a8d3d.png)
 
 Potwierdzamy i instalujemy paczki, następnie composera
+
 ![Zrzut ekranu 2022-09-06 215402](https://user-images.githubusercontent.com/58239029/189939994-295f4f49-a352-4d26-a03e-224d7cd7611e.png)
 
 Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zrealizować pierwszą cześć naszego pipelina tj. Build
@@ -157,8 +161,11 @@ Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zreali
 
 Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. W moim przypadku znajdują się one w folderze
 ./vendor/bin/phpunit
+
 ![image](https://user-images.githubusercontent.com/58239029/189941090-a4f6a7c1-e75f-48d9-aa33-bf8980454a28.png)
+
 Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik
+
 ![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189941369-d2285ee8-0530-4f8c-a8c3-0688036362b9.png)
 
 Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu
@@ -166,19 +173,33 @@ Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy nasz
 #Deploy
 
 Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję 
+
 ![image](https://user-images.githubusercontent.com/58239029/189942857-4dda7f9c-ec13-41c9-88c8-21f47e5322a0.png)
 
 Info na temat problemu:
+
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943911-9ac3add2-989e-4b47-8a22-99ce38eee1f7.png)
 
 
 Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z innego programu, który daje nam możliwość uruchomienia maszyn wirtualnych: VMware Workstation
+
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943436-b3641ff2-2813-4d9d-a59e-11b17a092f1e.png)
+
 Stawiamy sobie maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
-Na maszynie tworzymy sobie parę kluczy SSH i ustawiamy klucz w naszym Jenkinsie.
+
+Na maszynie tworzymy parę kluczy SSH i ustawiamy klucz w naszym Jenkinsie.
+
 Tworzenie kluczy ssh zostało świetnie wyjaśnione na filmie 
+
 https://www.youtube.com/watch?v=i70KZnEmgqw
+
+Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
+
+![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189947081-136d5a3e-f55d-4722-accc-7811c853b2af.png)
+
+
 A więc gdy stworzymy klucze na naszym serwerze musimy w naszym Jenkinsie dodać Credential i skopiować do niego klucz prywatny
+
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189944980-11afc83c-175f-4ba1-8bb4-a7f58460fbaa.png)
 
 
