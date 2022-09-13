@@ -111,6 +111,7 @@ Oraz zaznaczamy stosowne dla nas opcje
 ![image](https://user-images.githubusercontent.com/58239029/189934619-b5359674-4f42-485c-b78a-145800893de1.png)
 
 W moim przypadku rurociąg poinformuję nas o wykonywanych zmianach w kodzie t.j w tym przypadku: 
+
 ![image](https://user-images.githubusercontent.com/58239029/189935268-22d22151-e0c2-48bd-aa5c-d8299324d2b3.png)
 
 Następnie definujemy, że nasz build będzie uruchamiał się ze skryptu znajdującego się na naszym repo na Githubie
@@ -155,7 +156,7 @@ Potwierdzamy i instalujemy paczki, następnie composera
 
 Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zrealizować pierwszą cześć naszego pipelina tj. Build
 
-![Zrzut ekranu 2022-09-06 215402](https://user-images.githubusercontent.com/58239029/189940616-dc0ae695-ea56-4fd8-a2ee-43db9dda529c.png)
+![image](https://user-images.githubusercontent.com/58239029/189948699-410e5021-8579-4e04-a08f-8787a98d234e.png)
 
 #Test
 
