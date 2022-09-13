@@ -11,6 +11,7 @@ Licencja MIT – jedna z najprostszych i najbardziej liberalnych licencji otwart
 # Wykaz testów aplikacji
 
 ![image](https://user-images.githubusercontent.com/58239029/189960776-d7660b74-4a21-4b50-8613-167866fe956f.png)
+
 # Uruchomienie testów aplikacji
 
 ![image](https://user-images.githubusercontent.com/58239029/189960969-ab6fea38-4a19-4efa-94b3-654776f74f37.png)
@@ -51,13 +52,11 @@ Lub z poziomu wiersza poleceń:
 
 ![Zrzut ekranu 2022-06-29 144249](https://user-images.githubusercontent.com/58239029/176701773-70ee8f24-fbf6-4e7f-9123-cd1bc7671fa0.png)
 
-
 # Integracja projektu z Jenkins
 
 Jenkins to serwer automatyzacji. Chociaż można go użyć do zautomatyzowania niemal każdego zadania, najczęściej wiąże się to z tworzeniem kodu źródłowego i wdrażaniem wyników. Dla wielu Jenkins jest synonimem ciągłej integracji i ciągłego dostarczania (CI/CD).
 
 Jedną z najpotężniejszych funkcji Jenkinsa jest jego zdolność do rozdzielania zadań na wiele węzłów. Kontroler Jenkins wysyła zadania do odpowiedniego agenta na podstawie wymagań zadania i dostępnych w danym momencie zasobów.
-
 
 # Zestawienie nowej instancji Jenkinsa za pomocą środowiska Docker
 Uruchamianie Jenkinsa za pomocą Docker Compose
@@ -244,12 +243,3 @@ Wykonanie tych poleceń jest zoobrazowane w logach naszego pipelinu.
 Oto ostateczny wykaz jak zachowywał się nasz pipeline, aż do osiągnięcia pełnego sukcesu.
 
 ![image](https://user-images.githubusercontent.com/58239029/189956490-496eb1ad-316a-4725-a2be-9b677158e43d.png)
-
-
-
-
-
-
-
-
-
