@@ -64,10 +64,6 @@ Użyjemy do tego Docker Compose.
 
 ![image](https://user-images.githubusercontent.com/58239029/189926683-6fc83eb2-d14a-4e18-8257-ebade1b3cd82.png)
  
-Kontenery, które dotychczas nie zostały zaincjowane w naszym systsemie uruchamiamy za pomocą polecenia
-
-docker-compose build && docker-compose up -d
-
 # Pro-Tip
 
 Jeśli korzystamy z edytora kodu VScode możemy doinstalować wtyczkę Docker, która ułatwi nam proces maniupulowania kontenerami
@@ -176,6 +172,8 @@ Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy nasz
 
 #Deploy
 
+
+# Protip2
 Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję 
 
 ![image](https://user-images.githubusercontent.com/58239029/189942857-4dda7f9c-ec13-41c9-88c8-21f47e5322a0.png)
