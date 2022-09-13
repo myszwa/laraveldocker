@@ -128,7 +128,6 @@ Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklaro
 
 ![image](https://user-images.githubusercontent.com/58239029/189947860-36ee798b-0057-437a-899e-ac92fbb6849e.png)
 
-
 # Deklaracja rurociągu
 
 Stworzenie obiektu pipeline, przeprowadzającego następujące kroki: 
@@ -143,7 +142,6 @@ W tym kroku budujemy naszą aplikację
 ![image](https://user-images.githubusercontent.com/58239029/189947951-ee20573d-1ec3-480a-aa58-f7d8ee041855.png)
 
 
-
 Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym
 
 ![Zrzut ekranu 2022-09-06 215258](https://user-images.githubusercontent.com/58239029/189939765-1dde964a-f6b7-43a0-8906-04aa201a8d3d.png)
@@ -156,7 +154,7 @@ Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zreali
 
 ![image](https://user-images.githubusercontent.com/58239029/189948699-410e5021-8579-4e04-a08f-8787a98d234e.png)
 
-#Test
+# Test
 
 Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. W moim przypadku znajdują się one w folderze
 ./vendor/bin/phpunit
@@ -170,8 +168,7 @@ Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik
 
 Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu
 
-#Deploy
-
+# Deploy
 
 # Protip2
 Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję 
