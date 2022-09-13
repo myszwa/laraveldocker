@@ -186,7 +186,18 @@ Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z 
 
 ![image](https://user-images.githubusercontent.com/58239029/189949656-f5b720bc-6aea-43b3-8f3c-b0da52d35946.png)
 
+Na naszej maszynie wirtualnej wpisujemy polecenie
+
+sudo visudo
+
+I ustawiamy w tym pliku, żeby przy wykonaniu polecenia sudo maszyna nie wymagała od nas hasła co wspomoże późniejszy proces automatyzacji 
+
+![image](https://user-images.githubusercontent.com/58239029/189958638-331fd4a8-9e74-410d-a977-a2459c3aa20d.png)
+
+
 Stawiamy maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
+
+
 
 Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedstawione w poniższym filmie
 
@@ -195,9 +206,9 @@ https://www.youtube.com/watch?v=i70KZnEmgqw
 Łączymy się z naszą maszyną wirtualną za pomocą aplikacji PuTTY
 ![image](https://user-images.githubusercontent.com/58239029/189957525-350c404c-9ab1-4319-9c95-cdb78537ce04.png)
 
+Kopiujemy klucz prywatny, ponieważ z poziomu konsoli w maszynie wirtualnej nie byliśmy w stanie skopiować klucza a.
 
 ![image](https://user-images.githubusercontent.com/58239029/189957327-2fe4884e-3412-4c70-9431-67363c8c6fa5.png)
-
 
 Klucz prywatny będziemy wklejać do Jenkinsa
 
