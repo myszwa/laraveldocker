@@ -192,6 +192,13 @@ Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedsta
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
 
+Łączymy się z naszą maszyną wirtualną za pomocą aplikacji PuTTY
+![image](https://user-images.githubusercontent.com/58239029/189957525-350c404c-9ab1-4319-9c95-cdb78537ce04.png)
+
+
+![image](https://user-images.githubusercontent.com/58239029/189957327-2fe4884e-3412-4c70-9431-67363c8c6fa5.png)
+
+
 Klucz prywatny będziemy wklejać do Jenkinsa
 
 Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
