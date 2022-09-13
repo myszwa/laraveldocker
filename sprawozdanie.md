@@ -159,7 +159,7 @@ Potwierdzamy i instalujemy paczki, następnie composera.
 
 Instalujemy również npm (manager paczek odpowiadjący za front-end naszej aplikajci) poleceniem:
 
-install npm
+npm install
 
 Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zrealizować pierwszą cześć naszego pipelina tj. Build
 
