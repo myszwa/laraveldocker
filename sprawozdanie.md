@@ -38,6 +38,11 @@ MySQL – wolnodostępny, otwartoźródłowy system zarządzania relacyjnymi baz
 
 PHP – interpretowany, skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym.
 
+Obraz bazowy Docker
+
+![image](https://user-images.githubusercontent.com/58239029/189965343-acdbdd84-903e-4de1-9cf9-a10b1227d8d3.png)
+
+
 # Uruchomenie aplikacji
 
 Kontenery uruchamiamy za pomocą polecnia : docker-compose build && docker-compose up -d
