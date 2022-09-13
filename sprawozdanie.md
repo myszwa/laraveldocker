@@ -8,6 +8,13 @@ Wybrany projekt to Laravel - framework do aplikacji internetowych napisany w ję
 
 Licencja MIT – jedna z najprostszych i najbardziej liberalnych licencji otwartego oprogramowania. Daje użytkownikom nieograniczone prawo do używania, kopiowania, modyfikowania i rozpowszechniania oryginalnego lub zmodyfikowanego programu w postaci binarnej lub źródłowej.
 
+# Wykaz testów aplikacji
+
+![image](https://user-images.githubusercontent.com/58239029/189960776-d7660b74-4a21-4b50-8613-167866fe956f.png)
+# Uruchomienie testów aplikacji
+
+![image](https://user-images.githubusercontent.com/58239029/189960969-ab6fea38-4a19-4efa-94b3-654776f74f37.png)
+
 
 # Przygotowanie środowiska DevOps
   
