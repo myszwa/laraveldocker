@@ -66,17 +66,17 @@ Użyjemy do tego Docker Compose.
  
 # Pro-Tip
 
-Jeśli korzystamy z edytora kodu VScode możemy doinstalować wtyczkę Docker, która ułatwi nam proces maniupulowania kontenerami
+Jeśli korzystamy z edytora kodu VScode możemy doinstalować wtyczkę Docker, która ułatwi nam proces maniupulowania kontenerami.
 
 ![image](https://user-images.githubusercontent.com/58239029/189929111-50c45c32-8e4f-47f2-9054-86c9145522ee.png)
 
-Możemy za jej pomocą uruchamiać i wyłączać kontenery oraz możemy zajrzeć do środka i zobaczyć pliki, które są zawarte w środku
+Możemy za jej pomocą uruchamiać i wyłączać kontenery oraz możemy zajrzeć do środka i zobaczyć pliki, które są zawarte w środku.
 
 # Uruchomienie i konfiguracja Jenkinsa
 
 ![image](https://user-images.githubusercontent.com/58239029/189929953-897cb773-8e1d-4288-8694-c1907cc74865.png)
 
-Przy pierwszym uruchomieniu Jenkins poprosi nas o podanie hasła admina, hasło to możemy wyciągnąć z pliku, który znajduję się pod wskazaną ścieżką
+Przy pierwszym uruchomieniu Jenkins poprosi nas o podanie hasła admina, hasło to możemy wyciągnąć z pliku, który znajduję się pod wskazaną ścieżką.
 
 /var/jenkins_home/secrects/initialAdminPassword
 
@@ -84,27 +84,29 @@ Do naszej instacji Jenkinsa dostajemy się wpisując komendę w bashu:
 
 docker exec -it jenkins /bin/bash
 
-Następnie kierujemy się do pliku, w którym zawarte jest hasło i kopiujemy je do naszego Jenkinsowego GUI
+Następnie kierujemy się do pliku, w którym zawarte jest hasło i kopiujemy je do naszego Jenkinsowego GUI.
 
-Następnym krokiem jest stworzenie profilu użytkownika
+Następnym krokiem jest stworzenie profilu użytkownika.
+
 ![Zrzut ekranu 2022-09-06 191742](https://user-images.githubusercontent.com/58239029/189931737-45c395d1-4f8e-4cb5-8501-634ec81a2511.png)
 
-Następnie rozpoczynamy pracę nad definiowaniem naszego rurociągu
+Następnie rozpoczynamy pracę nad definiowaniem naszego rurociągu.
 
 # Integracja naszego pipelina z repozytorium na github
-Na początku upewniamy się czy w naszym Jenkinsie mamy aktywną wtyczkę do komunikacji z Githubem
+
+Na początku upewniamy się czy w naszym Jenkinsie mamy aktywną wtyczkę do komunikacji z Githubem.
 
 ![image](https://user-images.githubusercontent.com/58239029/189937028-c4b459fd-8f2d-4cfc-85bb-7213018dd62c.png)
 
-W ustawieniach naszego pipline odajemy link do naszego repozytorium
+W ustawieniach naszego pipline odajemy link do naszego repozytorium.
 
 ![image](https://user-images.githubusercontent.com/58239029/189933411-ad0e6f44-64d0-4f65-aed3-3b57fe5a6541.png)
 
-Dodajemy webhooka w ustawieniach naszego repozytorium
+Dodajemy webhooka w ustawieniach naszego repozytorium.
 
 ![image](https://user-images.githubusercontent.com/58239029/189934385-f7747826-cd6b-47d6-b76b-bb37c8e944bd.png)
 
-Oraz zaznaczamy stosowne dla nas opcje
+Oraz zaznaczamy stosowne dla nas opcje.
 
 ![image](https://user-images.githubusercontent.com/58239029/189934619-b5359674-4f42-485c-b78a-145800893de1.png)
 
@@ -112,19 +114,19 @@ W moim przypadku rurociąg poinformuję nas o wykonywanych zmianach w kodzie t.j
 
 ![image](https://user-images.githubusercontent.com/58239029/189935268-22d22151-e0c2-48bd-aa5c-d8299324d2b3.png)
 
-Następnie definujemy, że nasz build będzie uruchamiał się ze skryptu znajdującego się na naszym repo na Githubie
+Następnie definujemy, że nasz build będzie uruchamiał się ze skryptu znajdującego się na naszym repo na Githubie.
 
 ![image](https://user-images.githubusercontent.com/58239029/189937594-e9968fb6-1a37-45d7-a278-1bc9a73963ba.png)
 
-Podajemy link do naszego repo 
+Podajemy link do naszego repozytorium. 
 
 ![image](https://user-images.githubusercontent.com/58239029/189937730-4c6c1fb1-f1ee-40cb-8e4b-1c350d703b85.png)
 
-Oraz gdzie znajduję się nasz Jenkinsfile zaznaczając opcje Lightweight checkout
+Oraz gdzie znajduję się nasz Jenkinsfile zaznaczając opcje Lightweight checkout.
 
 ![image](https://user-images.githubusercontent.com/58239029/189937946-4497e2c5-960b-483a-9af1-138e788f30a8.png)
 
-Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklarowanych w naszym rurociągu
+Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklarowanych w naszym rurociągu.
 
 ![image](https://user-images.githubusercontent.com/58239029/189947860-36ee798b-0057-437a-899e-ac92fbb6849e.png)
 
@@ -137,18 +139,21 @@ Stworzenie obiektu pipeline, przeprowadzającego następujące kroki:
 
 # Build
 
-W tym kroku budujemy naszą aplikację
+W tym kroku budujemy naszą aplikację.
 
 ![image](https://user-images.githubusercontent.com/58239029/189947951-ee20573d-1ec3-480a-aa58-f7d8ee041855.png)
 
-
-Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym
+Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym.
 
 ![Zrzut ekranu 2022-09-06 215258](https://user-images.githubusercontent.com/58239029/189939765-1dde964a-f6b7-43a0-8906-04aa201a8d3d.png)
 
-Potwierdzamy i instalujemy paczki, następnie composera
+Potwierdzamy i instalujemy paczki, następnie composera.
 
 ![Zrzut ekranu 2022-09-06 215402](https://user-images.githubusercontent.com/58239029/189939994-295f4f49-a352-4d26-a03e-224d7cd7611e.png)
+
+Instalujemy również npm (manager paczek odpowiadjący za front-end naszej aplikajci) poleceniem:
+
+install npm
 
 Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zrealizować pierwszą cześć naszego pipelina tj. Build
 
@@ -156,34 +161,36 @@ Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zreali
 
 # Test
 
-Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. W moim przypadku znajdują się one w folderze
+Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. W moim przypadku znajdują się one w folderze.
+
 ./vendor/bin/phpunit
 
 ![image](https://user-images.githubusercontent.com/58239029/189941090-a4f6a7c1-e75f-48d9-aa33-bf8980454a28.png)
 
-Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik
+Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik.
 
 ![image](https://user-images.githubusercontent.com/58239029/189949334-74e89025-60ae-48c1-8f85-05aba08dcdd1.png)
 
 
-Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu
+Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu.
 
 # Deploy
 
 # Protip2
-Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję 
+Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję .
 
 ![image](https://user-images.githubusercontent.com/58239029/189942857-4dda7f9c-ec13-41c9-88c8-21f47e5322a0.png)
 
-Potwierdzenie, że nie jest to problem występujący lokalnie na moim komputerze
+Potwierdzenie, że nie jest to problem występujący lokalnie na moim komputerze.
 
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943911-9ac3add2-989e-4b47-8a22-99ce38eee1f7.png)
 
-Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z innego programu, który daje nam możliwość uruchomienia maszyn wirtualnych: VMware Workstation
+Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z innego programu, który daje nam możliwość uruchomienia maszyn wirtualnych: VMware Workstation.
 
 ![image](https://user-images.githubusercontent.com/58239029/189949656-f5b720bc-6aea-43b3-8f3c-b0da52d35946.png)
+# Konfiguracja wirtualnego serwera
 
-Na naszej maszynie wirtualnej wpisujemy polecenie
+Na naszej maszynie wirtualnej wpisujemy polecenie.
 
 sudo visudo
 
@@ -191,42 +198,44 @@ I ustawiamy w tym pliku, żeby przy wykonaniu polecenia sudo maszyna nie wymaga�
 
 ![image](https://user-images.githubusercontent.com/58239029/189958638-331fd4a8-9e74-410d-a977-a2459c3aa20d.png)
 
-Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedstawione w poniższym filmie
+Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedstawione w poniższym filmie.
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
 
-Łączymy się z naszą maszyną wirtualną za pomocą aplikacji PuTTY
+Łączymy się z naszą maszyną wirtualną za pomocą aplikacji PuTTY.
+
 ![image](https://user-images.githubusercontent.com/58239029/189957525-350c404c-9ab1-4319-9c95-cdb78537ce04.png)
 
-Kopiujemy klucz prywatny, ponieważ z poziomu konsoli w maszynie wirtualnej nie byliśmy w stanie skopiować klucza a.
+Kopiujemy klucz prywatny, ponieważ z poziomu konsoli w maszynie wirtualnej nie byliśmy w stanie skopiować klucza.
 
 ![image](https://user-images.githubusercontent.com/58239029/189957327-2fe4884e-3412-4c70-9431-67363c8c6fa5.png)
 
-Klucz prywatny będziemy wklejać do Jenkinsa
+Klucz prywatny będziemy wklejać do Jenkinsa.
 
 Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credentiala z kluczem SSH.
 
 ![image](https://user-images.githubusercontent.com/58239029/189951370-cffd1866-6605-4594-bdd9-49d07eaea7c3.png)
 
-Dodajemy Credentiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy
+Dodajemy Credentiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy.
 
 ![image](https://user-images.githubusercontent.com/58239029/189951565-1e1e1e8b-ef62-4e03-8c38-ae9f9c874169.png)
 
-Po wykonaniu tych czynności jesteśmy w stanie połączyć się z naszym serwerem deklarując następujące instrukcje
+Po wykonaniu tych czynności jesteśmy w stanie połączyć się z naszym serwerem deklarując następujące instrukcje.
 
 ![image](https://user-images.githubusercontent.com/58239029/189954907-9d441425-e457-4b63-80cd-b5bb384af7d0.png)
 
-Log z Jenkinsa potwierdzający udane połączenie
+Log z Jenkinsa potwierdzający udane połączenie.
 
 ![image](https://user-images.githubusercontent.com/58239029/189955236-e6cbd101-d8ad-4e81-b1f0-c6b663454258.png)
 
-Po udanym połączeniu z serwerem wykonujemy następujące instrukcje
+Po udanym połączeniu z serwerem wykonujemy następujące instrukcje.
 
 ![image](https://user-images.githubusercontent.com/58239029/189955600-32e6755b-d331-4008-ae18-7f826cd51fae.png)
 
-Wykonanie tych poleceń jest zoobrazowane w logach naszego pipelinu
+Wykonanie tych poleceń jest zoobrazowane w logach naszego pipelinu.
 
-Oto ostateczny wykaz jak zachowywał się nasz pipeline, aż do osiągnięcia pełnego sukcesu
+Oto ostateczny wykaz jak zachowywał się nasz pipeline, aż do osiągnięcia pełnego sukcesu.
+
 ![image](https://user-images.githubusercontent.com/58239029/189956490-496eb1ad-316a-4725-a2be-9b677158e43d.png)
 
 
