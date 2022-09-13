@@ -191,11 +191,6 @@ I ustawiamy w tym pliku, żeby przy wykonaniu polecenia sudo maszyna nie wymaga�
 
 ![image](https://user-images.githubusercontent.com/58239029/189958638-331fd4a8-9e74-410d-a977-a2459c3aa20d.png)
 
-
-Stawiamy maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
-
-
-
 Tworzymy klucze SSH na naszej maszynie wirtualnej co zostało świetnie przedstawione w poniższym filmie
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
@@ -209,11 +204,11 @@ Kopiujemy klucz prywatny, ponieważ z poziomu konsoli w maszynie wirtualnej nie 
 
 Klucz prywatny będziemy wklejać do Jenkinsa
 
-Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
+Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credentiala z kluczem SSH.
 
 ![image](https://user-images.githubusercontent.com/58239029/189951370-cffd1866-6605-4594-bdd9-49d07eaea7c3.png)
 
-Dodajemy Credyntiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy
+Dodajemy Credentiala z kluczem prywatnym SSH i uzupełniamy Passphrase jeśli podaliśmy hasło przy tworzeniu kluczy
 
 ![image](https://user-images.githubusercontent.com/58239029/189951565-1e1e1e8b-ef62-4e03-8c38-ae9f9c874169.png)
 
