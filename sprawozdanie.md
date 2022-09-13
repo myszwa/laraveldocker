@@ -85,7 +85,9 @@ Przy pierwszym uruchomieniu Jenkins poprosi nas o podanie hasła admina, hasło 
 /var/jenkins_home/secrects/initialAdminPassword
 
 Do naszej instacji Jenkinsa dostajemy się wpisując komendę w bashu:
+
 docker exec -it jenkins /bin/bash
+
 Następnie kierujemy się do pliku, w którym zawarte jest hasło i kopiujemy je do naszego Jenkinsowego GUI
 
 Następnym krokiem jest stworzenie profilu użytkownika
@@ -167,7 +169,8 @@ Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. 
 
 Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik
 
-![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189941369-d2285ee8-0530-4f8c-a8c3-0688036362b9.png)
+![image](https://user-images.githubusercontent.com/58239029/189949334-74e89025-60ae-48c1-8f85-05aba08dcdd1.png)
+
 
 Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu
 
@@ -181,25 +184,23 @@ Info na temat problemu:
 
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943911-9ac3add2-989e-4b47-8a22-99ce38eee1f7.png)
 
-
 Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z innego programu, który daje nam możliwość uruchomienia maszyn wirtualnych: VMware Workstation
 
-![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943436-b3641ff2-2813-4d9d-a59e-11b17a092f1e.png)
+![image](https://user-images.githubusercontent.com/58239029/189949656-f5b720bc-6aea-43b3-8f3c-b0da52d35946.png)
 
 Stawiamy sobie maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
-
-Na maszynie tworzymy parę kluczy SSH i ustawiamy klucz w naszym Jenkinsie.
 
 Tworzenie kluczy ssh zostało świetnie wyjaśnione na filmie 
 
 https://www.youtube.com/watch?v=i70KZnEmgqw
 
+Na maszynie wirtualnej tworzymy parę kluczy SSH,a następnie ustawiamy klucz w naszym Jenkinsie:
+
 Instalujemy plugin do Jenkinsa, który umożliwi nam dodanie Credintiala z kluczem SSH.
 
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189947081-136d5a3e-f55d-4722-accc-7811c853b2af.png)
 
-
-A więc gdy stworzymy klucze na naszym serwerze musimy w naszym Jenkinsie dodać Credential i skopiować do niego klucz prywatny
+Dodajemy Credyntiala z kluczem prywatnym SSH
 
 ![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189944980-11afc83c-175f-4ba1-8bb4-a7f58460fbaa.png)
 
