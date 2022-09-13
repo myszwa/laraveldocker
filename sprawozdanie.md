@@ -94,8 +94,11 @@ Następnym krokiem jest stworzenie profilu użytkownika
 Następnie rozpoczynamy pracę nad definiowaniem naszego rurociągu
 
 # Integracja naszego pipelina z repozytorium na github
+Na początku upewniamy się czy w naszym Jenkinsie mamy aktywną wtyczkę do komunikacji z Githubem
 
-Podajemy link do naszego repozytorium
+![image](https://user-images.githubusercontent.com/58239029/189937028-c4b459fd-8f2d-4cfc-85bb-7213018dd62c.png)
+
+W ustawieniach naszego pipline odajemy link do naszego repozytorium
 
 ![image](https://user-images.githubusercontent.com/58239029/189933411-ad0e6f44-64d0-4f65-aed3-3b57fe5a6541.png)
 
@@ -110,6 +113,19 @@ Oraz zaznaczamy stosowne dla nas opcje
 W moim przypadku rurociąg poinformuję nas o wykonywanych zmianach w kodzie t.j w tym przypadku: 
 ![image](https://user-images.githubusercontent.com/58239029/189935268-22d22151-e0c2-48bd-aa5c-d8299324d2b3.png)
 
+Następnie definujemy, że nasz build będzie uruchamiał się ze skryptu znajdującego się na naszym repo na Githubie
+
+![image](https://user-images.githubusercontent.com/58239029/189937594-e9968fb6-1a37-45d7-a278-1bc9a73963ba.png)
+
+Podajemy link do naszego repo 
+![image](https://user-images.githubusercontent.com/58239029/189937730-4c6c1fb1-f1ee-40cb-8e4b-1c350d703b85.png)
+Oraz gdzie znajduję się nasz Jenkinsfile zaznaczając opcje Lightweight checkout
+![image](https://user-images.githubusercontent.com/58239029/189937946-4497e2c5-960b-483a-9af1-138e788f30a8.png)
+
+Teraz możemy rozpocząc pracę nad wykonaniem poszczególnych etapów zadeklarowanych w naszym rurociągu
+
+![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189938690-e4ba6660-0919-4f05-be45-46997bda73bf.png)
+
 
 
 
@@ -120,19 +136,52 @@ Stworzenie obiektu pipeline, przeprowadzającego następujące kroki:
 - Test
 - Deploy
 
-![image](https://user-images.githubusercontent.com/58239029/176706071-4686d1a6-2842-4b4b-acc4-a6514bc25568.png)
 
-Uruchomienie rurociągu 
+# Build
+W tym kroku budujemy naszą aplikację
 
-![image](https://user-images.githubusercontent.com/58239029/176707038-3ab88646-1f26-4abc-bd11-1153b76729aa.png)
+![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189939081-181f1c38-8845-4a26-a867-111aff433d98.png)
 
-Wizualizacja historii budowania rurociągu
+Do wykonania tego kroku będzie konieczne doinstalowanie bibliotek php, które są konieczne do zbudowania naszego projektu oraz menedżera paczek composer na naszym serwerze Jenkinsowym
 
-![image](https://user-images.githubusercontent.com/58239029/176708415-c27c2016-495e-4797-abb2-dc5e036678d3.png)
+![Zrzut ekranu 2022-09-06 215258](https://user-images.githubusercontent.com/58239029/189939765-1dde964a-f6b7-43a0-8906-04aa201a8d3d.png)
 
-# Publish
+Potwierdzamy i instalujemy paczki, następnie composera
+![Zrzut ekranu 2022-09-06 215402](https://user-images.githubusercontent.com/58239029/189939994-295f4f49-a352-4d26-a03e-224d7cd7611e.png)
 
-Aplikacja musi znajdywać się na serwerze, ponieważ komunikacja z nią odbywa się za pomocą protokołu HTTP.
+Po zaopatrzeniu naszego Jenkinsa w odpowiednie dodatki jesteśmy w stanie zrealizować pierwszą cześć naszego pipelina tj. Build
+
+![Zrzut ekranu 2022-09-06 215402](https://user-images.githubusercontent.com/58239029/189940616-dc0ae695-ea56-4fd8-a2ee-43db9dda529c.png)
+
+#Test
+
+Kolejnym krokiem do wykonania będzie przeprowadzenie testów naszej aplikacji. W moim przypadku znajdują się one w folderze
+./vendor/bin/phpunit
+![image](https://user-images.githubusercontent.com/58239029/189941090-a4f6a7c1-e75f-48d9-aa33-bf8980454a28.png)
+Uruchamiamy skrypt phpunit i otrzymujemy pozytywny wynik
+![Zrzut ekranu 2022-09-06 211946](https://user-images.githubusercontent.com/58239029/189941369-d2285ee8-0530-4f8c-a8c3-0688036362b9.png)
+
+Po pozytywnym wyniku przeprowadzenia testów przechodzimy do ostatniej fazy naszego pipelinu
+
+#Deploy
+
+Zanim zacznę omawiać ostatnią fazę rurociągu chciałbym wspomnieć o napotkanym problemie z jednoczesnym uruchomieniem WSL i maszyny wirtualnej w programie VirtualBox. Mianowicie w programie VirtualBox nie da się postawić maszyny wirtualnej gdy jednocześnie mamy w Windowsie uruchumioną opcję 
+![image](https://user-images.githubusercontent.com/58239029/189942857-4dda7f9c-ec13-41c9-88c8-21f47e5322a0.png)
+
+Info na temat problemu:
+![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943911-9ac3add2-989e-4b47-8a22-99ce38eee1f7.png)
+
+
+Dlatego też unikając błędów z działaniem programu VirtualBox korzystamy z innego programu, który daje nam możliwość uruchomienia maszyn wirtualnych: VMware Workstation
+![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189943436-b3641ff2-2813-4d9d-a59e-11b17a092f1e.png)
+Stawiamy sobie maszynę Linux Server z, którą będzie się komunikował Jenkins za pomocą protokołu ssh
+Na maszynie tworzymy sobie parę kluczy SSH i ustawiamy klucz w naszym Jenkinsie.
+Tworzenie kluczy ssh zostało świetnie wyjaśnione na filmie 
+https://www.youtube.com/watch?v=i70KZnEmgqw
+A więc gdy stworzymy klucze na naszym serwerze musimy w naszym Jenkinsie dodać Credential i skopiować do niego klucz prywatny
+![Zrzut ekranu 2022-09-10 191355](https://user-images.githubusercontent.com/58239029/189944980-11afc83c-175f-4ba1-8bb4-a7f58460fbaa.png)
+
+
 
 
 
